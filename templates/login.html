@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style-login.css">
+    <title>LOGIN</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <form action="/login" method="POST">
+            <label for="user" class="default">User:</label>
+            <input type="user" class="default" name="user" id="user" placeholder="User">
+
+            <label for="password" class="default">Senha:</label>
+            <input type="password" class="default" name="password" id="password" placeholder="Senha">
+
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Lembrar de mim</label>
+
+            <a href="#" id="forgot-passwd">Esqueceu a senha?</a>
+
+            <input class="default" type="submit" value="login">
+        </form>
+        <p>Ainda não possui uma conta?</p>
+        <a href="/register">CRIAR CONTA</a>
+    </div>
+</body>
+</html>

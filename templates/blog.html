@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ORIGAMI</title>
+    <link rel="stylesheet" href="../static/css/style-blog.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img class="logo" src="../static/images/logo-nobackground.png" alt="Logo">
+        </div>
+        
+        <nav>
+            <ul class="nav_links">
+                <li><a href="#">EM ALTA</a></li>
+                <li><a href="#">USUÁRIOS FAMOSOS</a></li>
+                <li><a href="#">Item 1</a></li>
+            </ul>
+        </nav>
+        {% if user %}
+            <p>
+                {{ user[4] }} {{ user[5] }}      
+                <a id="logout" href="/logout" style="padding-left: 10px;">LOGOUT</a>
+            </p> 
+        {% else %}
+            <a class="cta" href="login"><button>LOGIN</button></a>
+        {% endif %}
+    </header>
+    
+    <div id="logo-big">
+        <img src="../static/images/logo-backgroung-blue.png" alt="">
+    </div>
+    
+    
+
+
+    <div class="header"></div>
+        
+    <div class="row">
+        <div class="leftcolumn">
+            {% for post in posts %}
+            <div class="card">
+                <h2>{{ post["title"] }}</h2>
+                <h5>{{ post["author"] }}, {{ post["date"].day }}/{{ post["date"].month }}/{{ post["date"].year }} às {{ post["date"].hour }}:{{ post["date"].minute }}</h5>
+                <!--
+                    {% if post["image"] == '' %}
+                    <div class="fakeimg" style="height:200px;">Image</div>
+                    {% endif %}
+                -->
+                <div class="content">
+                    <p>{{ post["content"] }}</p>
+                </div>
+
+                
+                {% if user %}
+                <div class="actions">
+                    
+
+                    {% if post["author_id"] == user_id %}
+                        <span class="material-icons">edit</span>
+                        <span class="material-icons" id="last">delete</span>
+                    {% endif %}
+
+                    <span class="material-icons">add_comment</span>
+                    <span id="favorite" name="last" class="material-icons">favorite_border</span>
+
+                </div>
+                {% endif %}
+            </div>
+            
+            {% endfor %}
+        </div>
+        <div class="rightcolumn">
+            {% if user %}
+            <div class="card card-add_post">
+                <h2>Adicionar post</h2>
+                <form action="" method="POST" id="add_post">
+                    <div class="form-line">
+                        <label for="title">Titulo: </label>
+                        <input type="text" name="title" id="title" placeholder="Título">
+                    </div>
+                    
+                    <div class="form-line">
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="Escreva aqui o conteúdo do seu post"></textarea>
+                    </div>
+                    <!--
+                        <div class="form-line">
+                        <input type="file" name="image" id="image" placeholder="Selecione uma imagem">
+                        </div>
+                    -->
+                    
+
+                    <div class="form-line">
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+    </div>
+   
+
+</body>
+    <script src="../static/js/script_blog.js"></script>
+</html>

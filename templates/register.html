@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style-register.css">
+    <title>CRIAR CONTA</title>
+</head>
+<body>
+    <div class="register-container">
+        <h1>CRIAR CONTA</h1>
+        <form action="/register" method="POST" id="register-form">
+            <div class="full-box">
+                <label for="username">Usuário:</label>
+                <input type="username" name="username" id="username" placeholder="Defina seu nome de usuário.">
+            </div>
+
+            <div class="full-box">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail.">
+            </div>
+
+            <div class="half-box spacing">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name" placeholder="Digite o seu nome.">
+            </div>
+            <div class="half-box">
+                <label for="lastname">Sobrenome:</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome.">
+            </div>
+
+            <div class="half-box spacing">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" placeholder="Digite a sua senha.">
+            </div>
+            <div class="half-box">
+                <label for="passwordconfirmation">Confirme a senha:</label>
+                <input type="password" name="passwordconfirmation" id="passwordconfirmation" placeholder="Confirme a sua senha.">
+            </div>
+
+            <div class="full-box">
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a>.</label>
+            </div>
+            <input type="submit" value="Registrar" id="btn-submit">
+        </form>
+    </div>
+    <p class="error_validation template"></p>
+</body>
+</html>

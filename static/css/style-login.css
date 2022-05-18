@@ -1,0 +1,93 @@
+/* GERAL */
+
+* {
+    color: rgb(48, 48, 48);
+}
+
+body {
+    background-color: #6bbddd;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+a, label {
+    font-size: .8rem;
+}
+
+a:hover {
+    color: rgb(0, 27, 117);
+}
+
+/* CONTAINER */
+.login-container {
+    background-color: #fff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* FOMRULÁRIO */
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.default {
+    display: block;
+    width: 96%;
+    text-align: left;
+}
+
+label {
+    font-weight: 700;
+}
+
+input {
+    border-bottom: 2px solid #323232;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border-bottom: 2px solid #085588;
+}
+
+#forgot-passwd {
+    text-align: right;
+    display: block;
+}
+
+input[type='checkbox'] {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+
+input[type='submit'] {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #fff;
+    background-color: #085588;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #002d4b;
+    transition: .5s;
+}
